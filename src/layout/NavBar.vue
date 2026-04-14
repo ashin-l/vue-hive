@@ -1,20 +1,21 @@
 <script setup lang="ts">
+import { ref } from "vue";
 import { RouterLink } from "vue-router";
 import Notice from "./Notice.vue";
 
-let visible = false;
-const code = 200;
-const msg = "xxxx"
+// 使用 ref 声明响应式变量
+const visible = ref(false);
+const code = ref(200);
+const msg = ref("xxxx");
 
 const showNotice = () => {
     console.log('showNotice');
-    visible = true;
+    visible.value = true;
     setTimeout(() => {
-        visible = false;
+        visible.value = false;
     }, 5000); // 5秒后关闭提示框
 }
 </script>
-
 
 <template>
     <nav class="navbar" role="navigation" aria-label="main navigation">

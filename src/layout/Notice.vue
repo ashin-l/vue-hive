@@ -8,8 +8,9 @@ const props = defineProps<{
 }>()
 
 const classObj = computed(() => ({
-    'is-primary': props.code.value === 200,
-    'is-danger': props.code.value !== 200
+    // 修复：去掉多余的 .value
+    'is-primary': props.code === 200,
+    'is-danger': props.code !== 200
 }))
 </script>
 

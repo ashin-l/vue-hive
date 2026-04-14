@@ -12,26 +12,16 @@ export default defineConfig({
       "@": fileURLToPath(new URL("./src", import.meta.url)),
     },
   },
+  // 修复：使用内置的 esbuild 替代未安装的 terser 去除 console
+  esbuild: {
+    drop: ["console", "debugger"],
+  },
   // 构建配置
   build: {
     // 输出目录
     outDir: "dist",
     // 是否生成源代码映射文件
     sourcemap: false,
-    // 是否启用压缩
-    minify: "terser",
-    // 是否将构建后的文件格式化
-    terserOptions: {
-      // 生产环境移除console打印
-      compress: {
-        drop_console: true,
-        drop_debugger: true,
-      },
-      // 去掉注释内容
-      output: {
-        comments: false,
-      },
-    },
   },
   server: {
     host: "0.0.0.0",
