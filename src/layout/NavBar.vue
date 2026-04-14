@@ -37,7 +37,7 @@ const showNotice = () => {
             <div class="navbar-start">
                 <RouterLink to="/" class="navbar-item">Home</RouterLink>
                 <RouterLink to="/blog" class="navbar-item">Blog</RouterLink>
-                <RouterLink to="/stock" class="navbar-item">全部股票</RouterLink>
+                <!-- <RouterLink to="/stock" class="navbar-item">全部股票</RouterLink> -->
                 <RouterLink to="/about" class="navbar-item">About</RouterLink>
             </div>
 
